@@ -1,0 +1,119 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@tanstack/query-async-storage-persister': 4.0.10
+  '@tanstack/query-sync-storage-persister': 4.0.10
+  '@tanstack/react-query': 4.0.10
+  '@tanstack/react-query-persist-client': 4.0.10
+  '@types/react': 18.0.15
+  create-typed-sdk: link:../create-typed-sdk
+  react: 18.2.0
+  type-fest: 2.16.0
+  typescript: 4.7.4
+
+dependencies:
+  '@tanstack/query-async-storage-persister': 4.0.10
+  '@tanstack/query-sync-storage-persister': 4.0.10
+  '@tanstack/react-query': 4.0.10_react@18.2.0
+  '@tanstack/react-query-persist-client': 4.0.10
+  create-typed-sdk: link:../create-typed-sdk
+  type-fest: 2.16.0
+
+devDependencies:
+  '@types/react': 18.0.15
+  react: 18.2.0
+  typescript: 4.7.4
+
+packages:
+
+  /@tanstack/query-async-storage-persister/4.0.10:
+    resolution: {integrity: sha512-XattQ4ariyYAAV8OHsDDn+PylYtS/C6FuYT9lQ/tyDGsY9LIFNJrF5ZwxroDhfxolLv1z55lWY/rYL7Mdga0gg==}
+    dev: false
+
+  /@tanstack/query-core/4.2.3:
+    resolution: {integrity: sha512-zdt5lYWs1dZaA3IxJbCgtAfHZJScRZONpiLL7YkeOkrme5MfjQqTpjq7LYbzpyuwPOh2Jx68le0PLl57JFv5hQ==}
+    dev: false
+
+  /@tanstack/query-sync-storage-persister/4.0.10:
+    resolution: {integrity: sha512-A8Lf8w8H2/FWTPGzNi5kb6KPI/OBFPs9+fzGZ6gvetSyl6U7aCq4qztn/PIqlp48xew/JFZjN2CtO8RivTwBnA==}
+    dev: false
+
+  /@tanstack/react-query-persist-client/4.0.10:
+    resolution: {integrity: sha512-R2xftsji8VteC28LWitQYhuXvUDPoFAOuDl8wP1ngg4aLIYtKCQ78MS/9jRJSuykok+TpNUCvthBb37ShNVLKQ==}
+    dev: false
+
+  /@tanstack/react-query/4.0.10_react@18.2.0:
+    resolution: {integrity: sha512-Wn5QhZUE5wvr6rGClV7KeQIUsdTmYR9mgmMZen7DSRWauHW2UTynFg3Kkf6pw+XlxxOLsyLWwz/Q6q1lSpM3TQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.2.3
+      '@types/use-sync-external-store': 0.0.3
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false
+
+  /@types/prop-types/15.7.5:
+    resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
+
+  /@types/react/18.0.15:
+    resolution: {integrity: sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.2
+      csstype: 3.1.0
+    dev: true
+
+  /@types/scheduler/0.16.2:
+    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: true
+
+  /@types/use-sync-external-store/0.0.3:
+    resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
+    dev: false
+
+  /csstype/3.1.0:
+    resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
+    dev: true
+
+  /js-tokens/4.0.0:
+    resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+
+  /loose-envify/1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
+
+  /react/18.2.0:
+    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+
+  /type-fest/2.16.0:
+    resolution: {integrity: sha512-qpaThT2HQkFb83gMOrdKVsfCN7LKxP26Yq+smPzY1FqoHRjqmjqHXA7n5Gkxi8efirtbeEUxzfEdePthQWCuHw==}
+    engines: {node: '>=12.20'}
+    dev: false
+
+  /typescript/4.7.4:
+    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
+  /use-sync-external-store/1.2.0_react@18.2.0:
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
