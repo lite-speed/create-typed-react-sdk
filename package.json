@@ -1,6 +1,6 @@
 {
   "name": "create-typed-react-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "module": "dist/index.js",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
     "@tanstack/query-sync-storage-persister": "4.0.10",
     "@tanstack/react-query": "4.0.10",
     "@tanstack/react-query-persist-client": "4.0.10",
-    "create-typed-sdk": "0.0.9",
+    "create-typed-sdk": "1.0.1",
     "type-fest": "2.16.0"
   },
   "devDependencies": {
