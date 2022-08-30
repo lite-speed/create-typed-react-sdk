@@ -6,7 +6,7 @@ specifiers:
   '@tanstack/react-query': 4.0.10
   '@tanstack/react-query-persist-client': 4.0.10
   '@types/react': 18.0.15
-  create-typed-sdk: link:../create-typed-sdk
+  create-typed-sdk: 0.0.8
   react: 18.2.0
   type-fest: 2.16.0
   typescript: 4.7.4
@@ -16,7 +16,7 @@ dependencies:
   '@tanstack/query-sync-storage-persister': 4.0.10
   '@tanstack/react-query': 4.0.10_react@18.2.0
   '@tanstack/react-query-persist-client': 4.0.10
-  create-typed-sdk: link:../create-typed-sdk
+  create-typed-sdk: 0.0.8
   type-fest: 2.16.0
 
 devDependencies:
@@ -78,6 +78,10 @@ packages:
 
   /@types/use-sync-external-store/0.0.3:
     resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==}
+    dev: false
+
+  /create-typed-sdk/0.0.8:
+    resolution: {integrity: sha512-S1m9kIEZQxBp/TnvmdJLOXYTC9hnQNW3mXumkEVNfxHYxHTlh586OGeehZtqp0qB4dA7E6AgOBbJ54MJUieemg==}
     dev: false
 
   /csstype/3.1.0:
