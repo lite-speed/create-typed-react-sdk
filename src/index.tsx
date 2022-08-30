@@ -9,13 +9,7 @@ import {
   onlineManager,
   focusManager,
 } from "@tanstack/react-query";
-import {
-  createTypedSDK,
-  DeepAsyncFnRecord,
-  DoFetch,
-  TypedSDK,
-  TypedSDKOptions,
-} from "create-typed-sdk";
+import { createTypedSDK, DeepAsyncFnRecord, DoFetch, TypedSDK, TypedSDKOptions } from "create-typed-sdk";
 import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
 import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
 import {
@@ -37,9 +31,7 @@ import React, { ReactNode, useContext, useState } from "react";
 
 export type TypedReactSDKOptions = TypedSDKOptions;
 
-export function createTypedReactSDK<SDK extends DeepAsyncFnRecord<SDK>>(
-  opts: ReactSDKOptions
-): ReactSDK<SDK> {
+export function createTypedReactSDK<SDK extends DeepAsyncFnRecord<SDK>>(opts: ReactSDKOptions): ReactSDK<SDK> {
   return new ReactSDKInner(opts) as any as ReactSDK<SDK>;
 }
 
@@ -48,10 +40,8 @@ type BasePersister = {
 } & Pick<PersistQueryClientOptions, "buster" | "maxAge">;
 
 export type PersisterOpts =
-  | (({ type: "sync" } & Parameters<typeof createSyncStoragePersister>[0]) &
-      BasePersister)
-  | (({ type: "async" } & Parameters<typeof createAsyncStoragePersister>[0]) &
-      BasePersister);
+  | (({ type: "sync" } & Parameters<typeof createSyncStoragePersister>[0]) & BasePersister)
+  | (({ type: "async" } & Parameters<typeof createAsyncStoragePersister>[0]) & BasePersister);
 
 type RQOptions = Pick<
   QueryObserverOptions,
@@ -77,12 +67,8 @@ type RQOptions = Pick<
 export type ReactSDKOptions = Simplify<
   TypedSDKOptions & {
     persister?: PersisterOpts;
-    setConnectivityEventListener?: (
-      setOnline: (isOnline: boolean) => void
-    ) => () => void;
-    setWindowFocusEventListener?: (
-      setIsFocused: (isFocused: boolean) => void
-    ) => () => void;
+    setConnectivityEventListener?: (setOnline: (isOnline: boolean) => void) => () => void;
+    setWindowFocusEventListener?: (setIsFocused: (isFocused: boolean) => void) => () => void;
   } & RQOptions
 >;
 
@@ -197,12 +183,7 @@ class ReactSDKInner<SDK extends DeepAsyncFnRecord<SDK>> {
     const getNext = (path: string[]): any => {
       return new Proxy(() => {}, {
         apply: (__, ___, args) => {
-          return this.#invokeBaseSDK({
-            path,
-            arg: args[0],
-            type: "SDK",
-            extraOpts: args[1],
-          });
+          return this.#invokeBaseSDK({ path, arg: args[0], type: "SDK", extraOpts: args[1] });
         },
         get: (__, prop) => {
           return getNext(path.concat(prop.toString()));
@@ -239,7 +220,7 @@ class ReactSDKInner<SDK extends DeepAsyncFnRecord<SDK>> {
           await Promise.all(
             p.extraOpts!.invalidate!.map(async (k) => {
               await this.#queryClient.invalidateQueries({ queryKey: k });
-            })
+            }),
           );
 
           return val;
@@ -256,30 +237,20 @@ class ReactSDKInner<SDK extends DeepAsyncFnRecord<SDK>> {
     return prom;
   }
 
-  #SDKQueryClientContext = React.createContext<undefined | QueryClient>(
-    undefined
-  );
+  #SDKQueryClientContext = React.createContext<undefined | QueryClient>(undefined);
 
   #useAssertProvider = () => {
     if (!useContext(this.#SDKQueryClientContext)) {
-      throw new Error(
-        `Unable to find provider! Ensure you have added SDKProvider to the root of your React app`
-      );
+      throw new Error(`Unable to find provider! Ensure you have added SDKProvider to the root of your React app`);
     }
   };
 
   public SDKProvider = (a: { children: ReactNode }) => {
-    const Provider = this.#persister
-      ? PersistQueryClientProvider
-      : QueryClientProvider;
+    const Provider = this.#persister ? PersistQueryClientProvider : QueryClientProvider;
 
     return (
       <Provider
-        persistOptions={
-          this.#persister
-            ? { persister: this.#persister, ...this.#persisterOpts }
-            : (undefined as any)
-        }
+        persistOptions={this.#persister ? { persister: this.#persister, ...this.#persisterOpts } : (undefined as any)}
         contextSharing={false}
         client={this.#queryClient}
         context={this.#SDKQueryClientContext as any}
@@ -323,13 +294,8 @@ class ReactSDKInner<SDK extends DeepAsyncFnRecord<SDK>> {
           // eslint-disable-next-line react-hooks/rules-of-hooks
           return useQuery(
             [...p.path, args[0]],
-            () =>
-              this.#invokeBaseSDK({
-                path: p.path,
-                arg: args[0],
-                type: "useSDK",
-              }),
-            { ...opts, context: this.#SDKQueryClientContext }
+            () => this.#invokeBaseSDK({ path: p.path, arg: args[0], type: "useSDK" }),
+            { ...opts, context: this.#SDKQueryClientContext },
           );
         },
         get(__, prop) {
@@ -360,17 +326,12 @@ class ReactSDKInner<SDK extends DeepAsyncFnRecord<SDK>> {
             [...p.path, initialArg],
             //A bit weird to use the pageParam this way but :shrug:. No other good way to do it.
             ({ pageParam }) =>
-              this.#invokeBaseSDK({
-                path: p.path,
-                arg: pageParam || initialArg,
-                type: "usePaginatedSDK",
-              }),
+              this.#invokeBaseSDK({ path: p.path, arg: pageParam || initialArg, type: "usePaginatedSDK" }),
             {
               ...opts,
-              getNextPageParam: (prevPage, allPages) =>
-                getArg(prevPage, allPages),
+              getNextPageParam: (prevPage, allPages) => getArg(prevPage, allPages),
               context: this.#SDKQueryClientContext,
-            }
+            },
           );
         },
         get(__, prop) {
