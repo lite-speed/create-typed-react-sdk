@@ -1,22 +1,10 @@
 {
   "name": "create-typed-react-sdk",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "module": "dist/index.js",
-  "exports": {
-    ".": "./dist/index.js",
-    "./server": "./dist/server.js"
-  },
-  "typesVersions": {
-    "*": {
-      ".": [
-        "dist/index.d.ts"
-      ],
-      "./node": [
-        "dist/server.d.ts"
-      ]
-    }
-  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc",
