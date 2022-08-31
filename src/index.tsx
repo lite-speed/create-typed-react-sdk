@@ -1,5 +1,4 @@
 import { Simplify } from "type-fest";
-export * from "create-typed-sdk";
 import {
   QueryObserverOptions,
   QueryClient,
