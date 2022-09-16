@@ -227,12 +227,6 @@ class ReactSDKInner<SDK extends DeepAsyncFnRecord<SDK>> {
       }
     }
 
-    console.log("FETCHING");
-
-    prom.then((c: any) => {
-      console.log("GOT", c);
-    });
-
     return prom;
   }
 

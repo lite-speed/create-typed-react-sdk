@@ -1,20 +1,10 @@
 {
   "name": "create-typed-react-sdk",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "module": "dist/index.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./server": "./dist/server.js"
-  },
-  "typesVersions": {
-    "*": {
-      ".": [ "dist/index.d.ts" ],
-      "server": [ "dist/server.d.ts" ]
-    }
-  },
   "type": "module",
   "scripts": {
     "build": "tsc",
@@ -30,16 +20,17 @@
     "@tanstack/query-sync-storage-persister": "4.0.10",
     "@tanstack/react-query": "4.0.10",
     "@tanstack/react-query-persist-client": "4.0.10",
-    "create-typed-sdk": "1.0.1",
     "type-fest": "2.16.0"
   },
   "devDependencies": {
     "@types/react": "18.0.15",
     "react": "18.2.0",
-    "typescript": "4.7.4"
+    "typescript": "4.7.4",
+    "create-typed-sdk": "1.0.8"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "create-typed-sdk": "*"
   },
   "keywords": [],
   "author": "",
