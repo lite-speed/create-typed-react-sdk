@@ -1,6 +1,6 @@
 {
   "name": "create-typed-react-sdk",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "module": "dist/index.js",
   "main": "dist/index.js",
